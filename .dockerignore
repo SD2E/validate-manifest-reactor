@@ -14,3 +14,8 @@ ida_rsa.*
 *.crt
 *.pkcs8
 .docker
+*.egg-info/
+.hypothesis
+.pytest_cache
+__pycache__
+*/__pycache__

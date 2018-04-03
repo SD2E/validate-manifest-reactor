@@ -5,8 +5,6 @@ json:
 linked_reactors:
   copy_dir_s3:
     ignore_err: false
-  slackbot:
-    ignore_err: false
 storage:
   id: data-sd2e-ingest
   native_path: /corral/s3/ingest

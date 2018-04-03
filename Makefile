@@ -11,4 +11,4 @@ clean:
 
 tests: clean
 	abaco deploy -R && \
-	bash tests/run_container_tests.sh pytest tests -s
+	export LOCALONLY=1 ; bash tests/run_container_tests.sh pytest tests -s
