@@ -1,0 +1,13 @@
+# Reactor
+REACTOR_NAME=validate_manifest
+REACTOR_DESCRIPTION="Ensures the specified manifest file conforms to a schema"
+# REACTOR_PRIVILEGED=0
+# REACTOR_STATELESS=false
+# REACTOR_WORKERS=1
+# REACTOR_STATELESS=0
+REACTOR_ALIAS=validate_manifest
+
+# Docker image
+DOCKER_HUB_ORG=sd2e
+DOCKER_IMAGE_TAG=validate_manifest
+DOCKER_IMAGE_VERSION=0.5.7

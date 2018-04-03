@@ -1,0 +1,18 @@
+[{
+        "object": {
+            "Key": "s3://sd2e-community/ingest/testing/biofab/yeast-gates_q0/3/manifest/107795-manifest.json"
+        },
+        "valid": true
+    }, {
+        "object": {
+            "Lock": "s3://sd2e-community/ingest/testing/biofab/yeast-gates_q0/3/manifest/107795-manifest.json"
+        },
+        "valid": false
+    }, {
+        "object": {
+            "Key": "sd2e-community/ingest/testing/biofab/yeast-gates_q0/3/manifest/107795-manifest.json"
+        },
+        "valid": true
+    }
+
+]

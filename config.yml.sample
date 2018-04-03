@@ -1,0 +1,8 @@
+---
+storage:
+  id: "data-sd2e-ingest"
+  path: "/"
+  native_path: "/corral/s3/ingest"
+json:
+  filename: "manifest.json"
+  schema: "/schemas/manifest_schema.json"

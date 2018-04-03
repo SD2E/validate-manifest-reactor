@@ -1,0 +1,21 @@
+---
+json:
+  filename: manifest.json
+  schema: /schemas/manifest_schema.json
+linked_reactors:
+  copy_dir_s3:
+    ignore_err: false
+  slackbot:
+    ignore_err: false
+storage:
+  id: data-sd2e-ingest
+  native_path: /corral/s3/ingest
+  path: /
+system_maps:
+  destination:
+    sd2e-community: data-sd2e-community
+    data-sd2e-community: sd2e-community
+  source:
+    data-sd2e-community: s3-data-sd2e-community
+logs:
+  level: "DEBUG"
