@@ -3,7 +3,7 @@
 
 data-representation:
 	rm -rf data-representation && \
-	git https://gitlab.sd2e.org/sd2program/data-representation && \
+	git clone https://gitlab.sd2e.org/sd2program/data-representation && \
 	cd data-representation && git checkout master
 
 clean:
