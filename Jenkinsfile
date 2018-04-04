@@ -31,7 +31,6 @@ pipeline {
         }
         stage('Build container') {
             steps {
-                sh "make data-representation"
                 sh "abaco deploy -R"
             }
         }

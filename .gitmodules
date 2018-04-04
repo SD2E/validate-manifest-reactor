@@ -1,0 +1,4 @@
+[submodule "data-representation"]
+	path = data-representation
+	url = git@gitlab.sd2e.org:sd2program/data-representation.git
+	branch = master
