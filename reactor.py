@@ -13,8 +13,17 @@ FS_ROOT = '/tmp'
 PWD = os.getcwd()
 
 
-def validate_file_schema(filename, schema_file=SCHEMA_FILE):
-    '''Validate a schema file according to the bundled definition'''
+def validate_file_schema(filename, schema_file=SCHEMA_FILE, permissive=False):
+    """
+    Validate a JSON document against a JSON schema
+
+    Positional arguments:
+    filename - str - path to the JSON file to validate
+
+    Keyword arguments:
+    schema_file - str - path to the requisite JSON schema file
+    permissive - bool - swallow validation errors [False]
+    """
     try:
         with open(filename) as object_file:
             object_json = json.loads(object_file.read())
@@ -34,13 +43,25 @@ def validate_file_schema(filename, schema_file=SCHEMA_FILE):
         validate(object_json, schema_json, resolver=fixResolver())
         return True
     except Exception as e:
-        raise Exception("file validation failed", e)
+        if permissive is False:
+            raise Exception("file validation failed", e)
+        else:
+            pass
 
 
 def validate_json_message(messageJSON='{}',
                           messageschema='/message.jsonschema',
                           permissive=True):
-    '''Validate an incoming JSON message against a schema'''
+    """
+    Validate JSON string against a JSON schema
+
+    Positional arguments:
+    messageJSON - str - JSON text
+
+    Keyword arguments:
+    schema_file - str - path to the requisite JSON schema file
+    permissive - bool - swallow validation errors [False]
+    """
     try:
         with open(messageschema) as schema:
             schema_json = json.loads(schema.read())
@@ -61,13 +82,18 @@ def validate_json_message(messageJSON='{}',
 
 
 def main():
-    '''
-    Download and validate a manifest at a given TACC S3 path
+    """
+    Download and validate a JSON manifest at a given TACC S3 path
 
-    Exemplar Message:
+    Input message(s):
+        {"uri": "s3://storage-system-bucket-alias/path/to/manifest.json"}
 
-    {"uri": "s3://storage-system-bucket-alias/path/to/manifest.json"}
-    '''
+    Output message(s):
+        {"uri": "s3://storage-system-bucket-alias/path/to/manifest.json"}
+
+    Linked actors:
+      - 'copy_dir_s3'
+    """
 
     r = Reactor()
     ag = r.client  # Agave client for grabbing the file

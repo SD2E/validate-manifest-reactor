@@ -1,9 +1,10 @@
 # Manifest Validator
 
-This Reactor will validate an SD2E data manifest using the current version
-of the project's JSON schema. It reports success or failure to the unified
+This Reactor will validate an SD2E data manifest using the [current version][4]
+of the project's [JSON schema][3]. It reports success or failure to the unified
 logging interface and passes the message along to subsequent steps in the
-ETL pipeline.
+ETL pipeline. It is built using the *[sd2e/reactors:python2][2]* base image
+and relies on its embedded `reactors` module for utility functions.
 
 ## Inbound Message(s)
 
@@ -34,7 +35,7 @@ described, though it should follow a similar form to inbound messages.
 }
 ```
 
-This outbound format passes along the essential 'Key' field of the message.
+This outbound format passes along the essential `Key` field of the message.
 It may get decorated with additional metadata.
 
 ## Local build and test this Reactor
@@ -66,3 +67,6 @@ Logs for execution lPpPYxJMaOJk:
 ```
 
 [1]: https://aws.amazon.com/sqs/
+[2]: https://cloud.docker.com/swarm/sd2e/repository/docker/sd2e/reactors/
+[3]: http://json-schema.org/
+[4]: https://gitlab.sd2e.org/sd2program/data-representation
